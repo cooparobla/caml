@@ -142,8 +142,8 @@ The associated data for GCM is the 4 magic bytes.
 ```
 
 This runs a small self-test. It encodes and decodes a sample document, checks that the
-text matches, and round-trips it through `CAMLMap`. Running `caml` with no arguments, or
-with an unknown command, also runs the self-test.
+text matches, and round-trips it through `CAMLMap`. Running `caml` with no arguments, with
+fewer than three arguments, or with an unknown command also runs the self-test.
 
 ## Project layout
 

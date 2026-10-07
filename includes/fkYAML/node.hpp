@@ -11840,7 +11840,7 @@ struct from_node_int_helper<BasicNodeType, IntType, false> {
 
         // under/overflow check.
         // coopa patch: any unsigned 64-bit type, not just uint64_t itself. On macOS size_t is
-        // `unsigned long` while uint64_t is `unsigned long long`, so the is_same test alone sent
+        // `unsigned long` while uint64_t is `unsigned long long`, so the is_same test alone would send
         // size_t down the signed branch, where max() wraps to -1 and every value "overflows".
         if (std::is_same<IntType, uint64_t>::value ||
             (std::is_unsigned<IntType>::value && sizeof(IntType) == sizeof(uint64_t))) {
@@ -11888,7 +11888,7 @@ inline void from_node(const BasicNodeType& n, IntegerType& i) {
 
         // under/overflow check.
         // coopa patch: any unsigned 64-bit type, not just uint64_t itself. On macOS size_t is
-        // `unsigned long` while uint64_t is `unsigned long long`, so the is_same test alone sent
+        // `unsigned long` while uint64_t is `unsigned long long`, so the is_same test alone would send
         // size_t down the signed branch, where max() wraps to -1 and every value "overflows".
         if (std::is_same<IntegerType, uint64_t>::value ||
             (std::is_unsigned<IntegerType>::value && sizeof(IntegerType) == sizeof(uint64_t))) {

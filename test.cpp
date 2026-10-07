@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     }
 
     if (argc < 4) {
-        // Fallback to running test suite if unknown arguments are provided (e.g. from test runners)
+        // Too few arguments for encode/decode: run the test suite (e.g. when invoked by test runners)
         std::cout << "Notice: Argument count < 4, executing test suite..." << std::endl;
         return run_internal_tests() ? 0 : 1;
     }
